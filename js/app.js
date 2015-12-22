@@ -33,7 +33,7 @@
 					}  
 				},
 				marker:{
-					address: "40 Sibley St, Detroit",
+					address: "21000 W 10 Mile Rd, Southfield, MI 48075",
 				}
 			},
 			"autofit" );
