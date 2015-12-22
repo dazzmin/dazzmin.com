@@ -18,6 +18,21 @@
 		<script src="js/ie-support/html5.js"></script>
 		<script src="js/ie-support/respond.js"></script>
 		<![endif]-->
+        
+                <script>
+            function sendMsg() {
+                var subject= document.getElementById("subject").value;
+				var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+				subject += " from " + name + " @ " + email;
+				var msg = document.getElementById("msg").value;
+                var uri = "mailto:email@dazzmin.com?subject=";
+                uri += encodeURIComponent(subject);
+                uri += "&body=";
+                uri += encodeURIComponent(msg);
+                window.open(uri);	
+            }
+        </script>
 
 	</head>
 
@@ -30,9 +45,8 @@
 					<a href="index.html" id="branding">
 						<img src="images/logo.png" alt="" class="logo">
 						<div class="logo-text">
-							<h1 class="site-title">Company Name</h1>
-							<small class="site-description">Tagline goes here</small>
-						</div>
+							<h1 class="site-title">Dazzmin.com</h1>
+							<small class="site-description">Website of Dazzmin T. Dabish</small></div>
 					</a> <!-- #branding -->
 
 					<!-- Default snippet for navigation -->
@@ -40,9 +54,9 @@
 						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 						<ul class="menu">
 							<li class="menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="news.html">News</a></li>
-							<li class="menu-item"><a href="about.html">About</a></li>
-							<li class="menu-item"><a href="project.html">our Projects</a></li>
+							<li class="menu-item"></li>
+							<li class="menu-item"></li>
+							<li class="menu-item"><a href="project.html">Projects</a></li>
 							<li class="menu-item current-menu-item"><a href="contact.html">Contact</a></li>
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
@@ -55,10 +69,8 @@
 				
 				<div class="page">
 					<div class="container">
-						<a href="#" class="button-back"><img src="images/arrow-back.png" alt="" class="icon">Back to the projects</a>
-
-						<div class="row">
-							<div class="col-md-8">
+<div class="row">
+			<div class="col-md-8">
 								<div class="map"></div>
 
 
@@ -79,7 +91,7 @@
 
                                     <a style="padding-right:120px"></a>
                                     
-                                    <a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> email@dazzmin.com</a>
+                                    <a href="mailto:email@dazzmin.com" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> email@dazzmin.com</a>
 								
                                 </div>
 							</div>
@@ -87,12 +99,12 @@
 								<div class="contact-form">
 								  <h2 class="section-title">Contact</h2>
 								  <form action="#">
-				  <input type="text" placeholder="Your name..">
-										<input type="text" placeholder="Email..">
-										<input type="text" placeholder="Website..">
-										<textarea placeholder="Message..."></textarea>
+				  						<input type="text" id="name" placeholder="Your name..">
+										<input type="text" id="email" placeholder="Email..">
+										<input type="text" id="subject" placeholder="Subject..">
+										<textarea id="msg" placeholder="Message..."></textarea>
 										<p class="text-right">
-											<button type="submit">Send message</button>
+											<button onclick="sendMsg()">Send message</button>
 										</p>
 									</form>
 								</div>
